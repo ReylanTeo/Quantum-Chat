@@ -2,7 +2,9 @@ const stun = require('stun');
 const WebSocket = require('ws');
 
 // Create a WebSocket server
-const wss = new WebSocket.Server({ port: 8080 });
+const port = process.env.PORT || 8080;
+const wss = new WebSocket.Server({ port });
+
 
 // Store connected clients
 const clients = new Set();
