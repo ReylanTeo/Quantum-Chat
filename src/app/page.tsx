@@ -19,7 +19,7 @@ const User: React.FC = () => {
 
     useEffect(() => {
         // Connect to the signaling server
-        const socket = new WebSocket('ws://localhost:8080');
+        const socket = new WebSocket('wss://quantum-chat-lm82.onrender.com');
 
         socket.onopen = () => {
             console.log('Connected to signaling server');
