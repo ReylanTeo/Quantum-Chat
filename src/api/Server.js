@@ -1,10 +1,26 @@
 const stun = require('stun');
 const WebSocket = require('ws');
+const Turn = require('node-turn');
 
 // Create a WebSocket server
 const port = process.env.PORT || 8080;
 const wss = new WebSocket.Server({ port });
 
+// TURN server configuration
+const turnServer = new Turn({
+    authMech: 'long-term',
+    credentials: {
+        username: 'password'
+    }
+});
+
+// Start TURN server
+try {
+    turnServer.start();
+    console.log('TURN server started');
+} catch (error) {
+    console.error('Error starting TURN server:', error);
+}
 
 // Store connected clients
 const clients = new Set();

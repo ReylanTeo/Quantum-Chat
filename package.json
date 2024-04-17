@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "next": "14.2.1",
+    "nodemon": "^3.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "secure-file-transfer": "^0.0.8",
     "stun": "^2.1.0",
     "ws": "^8.16.0"
   },
